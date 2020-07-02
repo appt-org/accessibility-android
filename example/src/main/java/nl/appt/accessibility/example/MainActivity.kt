@@ -2,7 +2,8 @@ package nl.appt.accessibility.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import nl.appt.accessibility.Accessibility
+import kotlinx.android.synthetic.main.activity_main.*
+import nl.appt.accessibility.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,6 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Accessibility.test()
+        // Announce a custom label and custom action on selection of textView1.
+        textView1.accessibility.label = getString(R.string.textView1_label)
+        textView1.accessibility.action = getString(R.string.textView1_action)
+
+        // Custom traversal order: textView1, textView3, textView2
+        textView3.accessibility.traversalBefore(textView2)
     }
 }
