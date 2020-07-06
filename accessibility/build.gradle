@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 29
@@ -35,3 +36,29 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+ext {
+    bintrayRepo = 'Accessibility' // Repo name in bintray dashboard
+    bintrayName = 'nl.appt.accessibility' // package name of the bintray repo
+
+    publishedGroupId = 'nl.appt.accessibility'   // this is the ID we want to see in implementation line
+    libraryName = 'accessibility'     // this is the module name of library
+    artifact = 'accessibility'        // this is the artifact we want to see in implementation line
+
+    libraryDescription = 'Accessibility helper methods for Android' // description of library
+
+    siteUrl = 'https://github.com/appt-nl/accessibility-android'    // git repo url
+    gitUrl = 'https://github.com/appt-nl/accessibility-android.git' // git repo vcs url
+
+    libraryVersion = '0.1.0'      // library version
+
+    developerId = 'janjaap'                // This is your bintray username
+    developerName = 'Jan Jaap de Groot'              // Developer's name
+    developerEmail = 'janjaap@abra.nl'                // Developer's email
+
+    licenseName = 'MIT License'  // for example, The Apache Software License, Version 2.0
+    licenseUrl = 'https://raw.githubusercontent.com/appt-nl/accessibility-android/master/LICENSE'   // for example, http://www.apache.org/licenses/LICENSE-2.0.txt
+    allLicenses = ['MIT']    // array of licenses, for example, ["Apache-2.0"]
+}
+
+apply from: 'publish.gradle'
