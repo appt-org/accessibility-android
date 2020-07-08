@@ -6,7 +6,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 
 /**
- * This file contains accessibility traversal related methods
+ * This file contains accessibility traversal related methods.
+ *
  * Created by Jan Jaap de Groot on 02/07/2020.
  */
 
@@ -49,4 +50,17 @@ fun Accessibility.Companion.setTraversalBefore(view: View, before: View) {
  */
 fun Accessibility.Companion.setTraversalAfter(view: View, after: View) {
     Accessibility.setTraversal(view, after = after)
+}
+
+/**
+ * Sets the given `views` to be traversed in chronological order.
+ *
+ * @param views The view order to apply
+ */
+fun Accessibility.Companion.setTraversalOrder(vararg views: View) {
+    if (views.size > 1) {
+        for (i in 0..views.size-1) {
+            Accessibility.setTraversalBefore(views[i], views[i+1])
+        }
+    }
 }

@@ -1,12 +1,14 @@
-package nl.appt.accessibility
+package nl.appt.accessibility.view
 
 import android.view.View
+import nl.appt.accessibility.*
 
 /**
- * This is the entry point for AccessibilityView methods.
+ * This class contains accessibility extensions for View.
+ *
  * Created by Jan Jaap de Groot on 02/07/2020.
  */
-class AccessibilityView(private val view: View) {
+class AccessibleView(private val view: View) {
 
     /**
      * Getter/setter for accessibility label
@@ -75,11 +77,31 @@ class AccessibilityView(private val view: View) {
     fun traversalAfter(after: View) {
         Accessibility.setTraversalAfter(view, after)
     }
+
+
+    /**
+     * Setter for traversal order
+     */
+    var elements: Array<View>?
+        get() = null
+        set(value) {
+            value?.let { views ->
+                Accessibility.setTraversalOrder(*views)
+            }
+        }
+
+
+    /**
+     * Moves the accessibility focus to the current view
+     */
+    fun focus() {
+        Accessibility.setFocus(view)
+    }
 }
 
 // Adds the `accessibility` field to all classes which inherit from View.
-var View.accessibility: AccessibilityView
-    get() = AccessibilityView(this)
+var View.accessibility: AccessibleView
+    get() = AccessibleView(this)
     set(value) {
         // Ignored
     }

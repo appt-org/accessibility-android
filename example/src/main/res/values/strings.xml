@@ -2,8 +2,8 @@
     <string name="app_name">Accessibility</string>
 
     <string name="textView1">This is TextView 1</string>
-    <string name="textView1_label">This is the accessibility label of TextView 1</string>
-    <string name="textView1_action">Nothing happens</string>
+    <string name="textView1_label">Custom accessibility label</string>
+    <string name="textView1_action">Custom accessibility action</string>
 
     <string name="textView2">This is TextView 2</string>
     <string name="textView3">This is TextView 3</string>

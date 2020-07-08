@@ -9,7 +9,8 @@ import androidx.core.view.accessibility.AccessibilityEventCompat
 import java.util.*
 
 /**
- * This is the entry point for Accessibility methods.
+ * The Accessibility class contains all accessibility methods.
+ *
  * Created by Jan Jaap de Groot on 02/07/2020.
  */
 class Accessibility {
@@ -94,9 +95,9 @@ fun Accessibility.Companion.announce(context: Context?, message: String) {
 }
 
 /**
- * Moves the focus to the given view
+ * Moves the accessibility focus to the given view
  *
- * @param view View to move focus to
+ * @param view View to move accessibility focus to
  */
 fun Accessibility.Companion.setFocus(view: View) {
     view.isFocusable = true

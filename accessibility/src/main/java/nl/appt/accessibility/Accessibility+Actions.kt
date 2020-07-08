@@ -6,7 +6,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 
 /**
- * This file contains accessibility action related methods
+ * This file contains accessibility action related methods.
+ *
  * Created by Jan Jaap de Groot on 02/07/2020.
  */
 
