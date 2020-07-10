@@ -21,6 +21,10 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
  * @see androidx.core.view.accessibility.AccessibilityNodeInfoCompat
  */
 fun Accessibility.Companion.setAction(view: View, type: Int, description: String) {
+    if (type == AccessibilityNodeInfoCompat.ACTION_CLICK) {
+        view.isClickable = true
+    }
+
     ViewCompat.setAccessibilityDelegate(view, object : AccessibilityDelegateCompat() {
         override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
             super.onInitializeAccessibilityNodeInfo(host, info)
@@ -63,23 +67,4 @@ fun Accessibility.Companion.setAction(view: View, action: String) {
  */
 fun Accessibility.Companion.setAction(view: View, action: Int) {
     Accessibility.setAction(view, AccessibilityNodeInfoCompat.ACTION_CLICK, action)
-}
-
-
-/**
- * Adds an accessibility action
- *
- * @param action Short description of the action
- */
-fun View.setAccessibilityAction(action: String) {
-    Accessibility.setAction(this, action)
-}
-
-/**
- * Adds an accessibility action
- *
- * @param action Resource describing the action
- */
-fun View.setAccessibilityAction(action: Int) {
-    Accessibility.setAction(this, action)
 }

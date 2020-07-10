@@ -14,9 +14,9 @@ class AccessibleView(private val view: View) {
      * Getter/setter for accessibility label
      */
     var label: CharSequence?
-        get() = view.contentDescription
+        get() = Accessibility.getLabel(view)
         set(value) {
-            view.contentDescription = value
+            Accessibility.setLabel(view, value)
         }
 
     /**

@@ -101,8 +101,18 @@ fun Accessibility.Companion.announce(context: Context?, message: String) {
  */
 fun Accessibility.Companion.setFocus(view: View) {
     view.isFocusable = true
-    view.requestFocus()
+    view.isFocusableInTouchMode = true
     view.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED)
+}
+
+
+/**
+ * Retrieves the accessibility  label from the given view
+ *
+ * @param view View to retrieve the label from
+ */
+fun Accessibility.Companion.getLabel(view: View): CharSequence? {
+    return view.contentDescription
 }
 
 /**
@@ -111,6 +121,6 @@ fun Accessibility.Companion.setFocus(view: View) {
  * @param view View to apply the label to
  * @param label The label to apply to the view
  */
-fun Accessibility.Companion.setLabel(view: View, label: String) {
+fun Accessibility.Companion.setLabel(view: View, label: CharSequence?) {
     view.contentDescription = label
 }

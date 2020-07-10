@@ -59,7 +59,7 @@ fun Accessibility.Companion.setTraversalAfter(view: View, after: View) {
  */
 fun Accessibility.Companion.setTraversalOrder(vararg views: View) {
     if (views.size > 1) {
-        for (i in 0..views.size-1) {
+        for (i in 0..views.size-2) {
             Accessibility.setTraversalBefore(views[i], views[i+1])
         }
     }
