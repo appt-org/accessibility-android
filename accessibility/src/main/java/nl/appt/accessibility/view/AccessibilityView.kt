@@ -11,7 +11,7 @@ import nl.appt.accessibility.*
 class AccessibleView(private val view: View) {
 
     /**
-     * Getter/setter for accessibility label
+     * Accessibility label
      */
     var label: CharSequence?
         get() = Accessibility.getLabel(view)
@@ -30,7 +30,7 @@ class AccessibleView(private val view: View) {
 
 
     /**
-     * Setter for accessibility action
+     * Accessibility action
      */
     var action: String?
         get() = null
@@ -80,7 +80,7 @@ class AccessibleView(private val view: View) {
 
 
     /**
-     * Setter for traversal order
+     * Order of accessibility elements
      */
     var elements: Array<View>?
         get() = null
@@ -92,7 +92,7 @@ class AccessibleView(private val view: View) {
 
 
     /**
-     * Moves the accessibility focus to the current view
+     * Moves the accessibility focus to this view
      */
     fun focus() {
         Accessibility.setFocus(view)
