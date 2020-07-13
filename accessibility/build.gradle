@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName '0.1.0'
+        versionCode 2
+        versionName '0.2.0'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         consumerProguardFiles 'consumer-rules.pro'
@@ -45,12 +45,12 @@ ext {
     libraryName = 'accessibility'     // this is the module name of library
     artifact = 'accessibility'        // this is the artifact we want to see in implementation line
 
-    libraryDescription = 'Accessibility helper methods for Android' // description of library
+    libraryDescription = 'Accessibility features in a unified way.' // description of library
 
     siteUrl = 'https://github.com/appt-nl/accessibility-android'    // git repo url
     gitUrl = 'https://github.com/appt-nl/accessibility-android.git' // git repo vcs url
 
-    libraryVersion = '0.1.0'      // library version
+    libraryVersion = '0.2.0'      // library version
 
     developerId = 'janjaap'                // This is your bintray username
     developerName = 'Jan Jaap de Groot'              // Developer's name
