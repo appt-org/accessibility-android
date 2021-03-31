@@ -2,9 +2,13 @@ package nl.appt.accessibility.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
+import nl.appt.accessibility.Analytics
 import nl.appt.accessibility.activity.accessibility
+import nl.appt.accessibility.getSettings
 import nl.appt.accessibility.view.accessibility
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,5 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         // Custom traversal order: textView1, textView3, textView2.
         accessibility.elements = arrayOf(textView1, textView3, textView2)
+
+        // Analytics
+        val settings = Analytics.getSettings(this)
+        Log.d("Analytics", JSONObject(settings).toString())
     }
 }
