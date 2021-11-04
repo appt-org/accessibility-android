@@ -1,17 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion '29.0.3'
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 3
-        versionName '0.3.0'
+        targetSdkVersion 31
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         consumerProguardFiles 'consumer-rules.pro'
@@ -29,37 +26,13 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-}
-
-ext {
-    bintrayRepo = 'Accessibility' // Repo name in bintray dashboard
-    bintrayName = 'nl.appt.accessibility' // package name of the bintray repo
-
-    publishedGroupId = 'nl.appt.accessibility'   // this is the ID we want to see in implementation line
-    libraryName = 'accessibility'     // this is the module name of library
-    artifact = 'accessibility'        // this is the artifact we want to see in implementation line
-
-    libraryDescription = 'Accessibility features in a unified way.' // description of library
-
-    siteUrl = 'https://github.com/appt-nl/accessibility-android'    // git repo url
-    gitUrl = 'https://github.com/appt-nl/accessibility-android.git' // git repo vcs url
-
-    libraryVersion = '0.2.0'      // library version
-
-    developerId = 'janjaap'                // This is your bintray username
-    developerName = 'Jan Jaap de Groot'              // Developer's name
-    developerEmail = 'janjaap@abra.nl'                // Developer's email
-
-    licenseName = 'MIT License'  // for example, The Apache Software License, Version 2.0
-    licenseUrl = 'https://raw.githubusercontent.com/appt-nl/accessibility-android/master/LICENSE'   // for example, http://www.apache.org/licenses/LICENSE-2.0.txt
-    allLicenses = ['MIT']    // array of licenses, for example, ["Apache-2.0"]
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
 apply from: 'publish.gradle'
