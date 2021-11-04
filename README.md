@@ -44,9 +44,11 @@ dependencies {
 }
 ```
 
+Note: in the near future the library will be made migrated to Maven Central.
+
 ## Author
 
-Jan Jaap de Groot, janjaap@abra.nl
+Jan Jaap de Groot, janjaap@appt.nl
 
 ## License
 
